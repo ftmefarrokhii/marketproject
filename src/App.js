@@ -1,20 +1,24 @@
 import { Fragment } from 'react';
 import './App.css';
-import Blog from './Blog';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
-import logoImg from './images/logo.jpg'
 import Header from './components/Header';
+import MainHeader from './components/MainHeader';
 import Slideshow from './components/Slideshow';
 import Test from './components/Test';
+import SlideMain from './components/SlideMain';
+import Login from './components/Login';
 function App() {
   return (
     <Fragment>
+      
       <Header></Header>
-      <img src={logoImg} alt="logo" className="logoImg"></img>
-      <Blog></Blog>
+      <MainHeader></MainHeader>
+      <SlideMain></SlideMain>
       <Slideshow></Slideshow>
       <Test></Test>
+      <Login></Login>
+      
     </Fragment>
     
 
