@@ -8,7 +8,16 @@ const Login =()=>{
 
     const submitHandler=(event)=>{
         event.preventDefault();
-        console.log(enteredUsername,enteredEmail,enteredNumber,enteredPassword)
+        if(enteredUsername.trim().length === 0 || enteredEmail.trim().length === 0){
+            // console.log("error")
+            return;
+        }
+        if(+enteredNumber<1){
+            return;
+        }
+        console.log(enteredUsername,enteredEmail,enteredNumber,enteredPassword);
+        setEnteredUsername('');
+        setEnteredEmail('');
     }
     const usernameChangeHandler=(event)=>{
         setEnteredUsername(event.target.value);
@@ -24,14 +33,14 @@ const Login =()=>{
     }
     return(
         <form onSubmit={submitHandler}>
-            <label>username</label>
-            <input type='text' onChange={usernameChangeHandler}></input>
-            <label>email</label>
-            <input type='email' onChange={emailChangeHandler}></input>
-            <label>phonenumber</label>
-            <input type='number' onChange={numberChangeHandler}></input>
-            <label>password</label>
-            <input type='password' onChange={passwordChangeHandler}></input>
+            <label htmlFor="username">username</label>
+            <input id="username" type='text' value={enteredUsername} onChange={usernameChangeHandler}></input>
+            <label htmlFor="email">email</label>
+            <input id="email" type='email' value={enteredEmail} onChange={emailChangeHandler}></input>
+            <label htmlFor="phonenumber">phonenumber</label>
+            <input id="number" type='number' value={enteredNumber} onChange={numberChangeHandler}></input>
+            <label htmlFor="password">password</label>
+            <input id="password" type='password' value={enteredPassword} onChange={passwordChangeHandler}></input>
             <button type='submit'>submit</button>
         </form>
     )
