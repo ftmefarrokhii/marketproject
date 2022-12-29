@@ -4,6 +4,7 @@ import search from '../images/search.png';
 import React, { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import menu from '../images/menu-rounded.png'
+// import {Link } from "react-router-dom";
 
 const Header =()=>{
     const [show, setShow] = useState(false);
