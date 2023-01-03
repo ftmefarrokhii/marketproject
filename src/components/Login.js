@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classes from "./Login.css"
 
 const Login =()=>{
     const [enteredUsername,setEnteredUsername]=useState('');
@@ -93,21 +94,26 @@ const Login =()=>{
     }
 
     return(
+        <div className="logindiv">
+            <p>ورود</p>
+            <div className="formdiv">
         <form onSubmit={submitHandler}>
-            <label htmlFor="username">username</label>
-            <input id="username" type='text' value={enteredUsername} onBlur={usernameonblurHandler} onChange={usernameChangeHandler}></input>
+            {/* <label htmlFor="username">username</label> */}
+            <input id="username" className="forminput" placeholder="یوزر نیم" type='text' value={enteredUsername} onBlur={usernameonblurHandler} onChange={usernameChangeHandler}></input>
             {nameInputIsInvalid && <p style={{color:"red"}}>username must not be empty</p>}
-            <label htmlFor="email">email</label>
-            <input id="email" type='email' value={enteredEmail} onBlur={emailblurHandler} onChange={emailChangeHandler}></input>
+            {/* <label htmlFor="email">email</label> */}
+            <input id="email" className="forminput"  placeholder="ایمیل" type='email' value={enteredEmail} onBlur={emailblurHandler} onChange={emailChangeHandler}></input>
             {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
-            <label htmlFor="phonenumber">phonenumber</label>
-            <input id="number" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>
+            {/* <label htmlFor="phonenumber">phonenumber</label> */}
+            <input id="number" className="forminput"  placeholder="شماره موبایل" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>
             {enteredNumberIsInvalid && <p style={{color:"red"}}>phone number must be 12 char</p>}
-            <label htmlFor="password">password</label>
-            <input id="password" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>
+            {/* <label htmlFor="password">password</label> */}
+            <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>
             {enteredPasswordIsInVaLID && <p style={{color:"red"}}>password should be at least 8 char</p>}
-            <button type='submit' disabled={!formIsValid}>submit</button>
+            <button type='submit' className="submitbtn" disabled={!formIsValid}>submit</button>
         </form>
+        </div>
+        </div>
     )
 }
 export default Login;

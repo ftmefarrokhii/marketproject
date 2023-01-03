@@ -1,13 +1,13 @@
-import "./Footer.css";
+import "./Products.css";
 import React from 'react';
 import Carousel from 'react-grid-carousel';
 import lbs4 from '../images/lbs2.jpeg';
 
-const Footer =()=>{
+const Products=()=>{
     return(
         <Carousel cols={5} rows={1} gap={5} loop showDots={true} autoplay={3000} arrowLeft={true}>
             <Carousel.Item>
-            <div className="itemm">
+            <div className="item">
                 <div> <img width="250px" src={lbs4} alt="first slide"/></div>
                 <div className="info">
                     <span>super shoebbbbbs</span>
@@ -16,7 +16,7 @@ const Footer =()=>{
             </div>
             </Carousel.Item>
             <Carousel.Item>
-            <div className="itemm">
+            <div className="item">
                 <div> <img width="250px" src={lbs4} alt="first slide"/></div>
                 <div className="info">
                     <span>super shoebbbbbs</span>
@@ -25,7 +25,7 @@ const Footer =()=>{
             </div>
             </Carousel.Item>
             <Carousel.Item>
-            <div className="itemm">
+            <div className="item">
                 <div> <img width="250px" src={lbs4} alt="first slide"/></div>
                 <div className="info">
                     <span>super shoebbbbbs</span>
@@ -34,7 +34,7 @@ const Footer =()=>{
             </div>
             </Carousel.Item>
         <Carousel.Item>
-            <div className="itemm">
+            <div className="item">
                 <div> <img width="250px" src={lbs4} alt="first slide"/></div>
                 <div className="info">
                     <span>super shoebbbbbs</span>
@@ -43,7 +43,7 @@ const Footer =()=>{
             </div>
         </Carousel.Item>
         <Carousel.Item>
-            <div className="itemm">
+            <div className="item">
                 <div> <img width="250px" src={lbs4} alt="first slide"/></div>
                 <div className="info">
                     <span>super shoebbbbbs</span>
@@ -82,7 +82,7 @@ const Footer =()=>{
         </Carousel.Item>
         {/* ... */}
       </Carousel>
+
     )
 }
-
-export default Footer;
+export default Products;
