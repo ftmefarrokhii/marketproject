@@ -7,12 +7,22 @@ import MainHeader from './components/MainHeader';
 import Slideshow from './components/Slideshow';
 import SlideMain from './components/SlideMain';
 import Login from './components/Login';
-import { Router} from "react-router-dom";
+import Drag from './components/Drag';
+import { Router, Routes} from "react-router-dom";
 import {Route} from 'react-router-dom';
 import Products from './components/Products';
+import { Home } from '@mui/icons-material';
 
 function App() {
   return (
+    
+      
+    // <Routes>
+    //   <Route exact path='/' element={<Header/>}></Route>
+    //   <Route path='/login' element={<Login/>}><Login/></Route>
+    //   <Route path='/shopping' element={<Slideshow/>}><SlideMain/></Route>
+
+    // </Routes>
     <Fragment>
       <Header></Header>
       <MainHeader></MainHeader>
@@ -21,10 +31,11 @@ function App() {
      <Products/>
     <SlideMain></SlideMain>
     <Login></Login>
+    <Drag/>
       
     </Fragment>
     
-
+    
   );
 }
 
