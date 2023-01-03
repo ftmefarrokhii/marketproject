@@ -56,15 +56,33 @@ import Slideshow from './components/Slideshow';
 import Test from './components/Test';
 import SlideMain from './components/SlideMain';
 import Login from './components/Login';
-import { Router, Switch } from "react-router-dom";
+import { Router} from "react-router-dom";
 import {Route} from 'react-router-dom';
-
+import Footer from './components/Footer';
+// import ReactDOM from "react-dom/client";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Header from './components/Header';
+// import Login from './components/Login';
+// import Footer from './components/Footer';
+// import Contact from "./pages/Contact";
+// import NoPage from "./pages/NoPage";
 function App() {
   return (
+  //   <BrowserRouter>
+  //   <Routes>
+  //     <Route path="/" element={<Header />}>
+  //       <Route index element={<Login />} />
+  //       <Route path="Footer" element={<Footer />} />
+  //       {/* <Route path="contact" element={<Contact />} />
+  //       <Route path="*" element={<NoPage />} /> */}
+  //     </Route>
+  //   </Routes>
+  // </BrowserRouter>
+
   //   <Router>
   //     <Header></Header>
       
-  //   <Route exact path="/">
+  //   <Route path="/" >
   //     <Login></Login>
   //   </Route>
   //   <Route path="/www">
@@ -78,11 +96,12 @@ function App() {
     <Fragment>
       <Header></Header>
       <MainHeader></MainHeader>
-      <SlideMain></SlideMain>
+      
       <Slideshow></Slideshow>
-      <Test></Test>
-      <Login></Login>
-
+      {/* <Test></Test> */}
+      {/* <Login></Login> */}
+     <Footer/>
+    <SlideMain></SlideMain>
       
     </Fragment>
     

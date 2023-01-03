@@ -1,12 +1,11 @@
-import logoImg from '../images/logo.jpg'
+import logoImg from '../images/image.jpg'
+import classes from './MainHeader.css';
 
 const MainHeader =()=>{
     return(
-        <div class="container-fluid mt-5">
-        <div class="row">
-            <img src={logoImg} alt="logo" className="logoImg"></img>
-            </div>
-            </div>
+        <div className="imagemain">
+            <img src={logoImg} alt="logo"></img>
+        </div>
     )
 }
 export default MainHeader;

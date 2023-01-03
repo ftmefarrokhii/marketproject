@@ -1,10 +1,10 @@
 .header{
     height: 5rem;
-    width: 100%;
+    width: 100vw;
     background-color:#f9f9f9;
     display: inline-flex;
     position: fixed;
-    z-index: 3;
+    z-index: 2;
 }
 .leftheader{
     width: 30% ;
@@ -14,15 +14,29 @@
     display: flex;
     margin: 20px;
 }
+.search_div{
+    height: 45px;
+    background-color: rgb(221, 219, 219);
+    float: right;
+    border-radius: 5px;
+    display: flex;
+}
+.searchinput{
+    width: 80%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    float: right;
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgb(221, 219, 219);
+}
 .iconsearch{
     width: 20px;
     height: 20px;
-    /* margin-top: 5px; */
     margin: 12px;
 }
-/* .offcanvas{
-    width: 30%;
-} */
 .loginbtn{
     margin: 2px;
     width: 40px;
@@ -43,27 +57,6 @@
    text-align: center;
    padding-top: 12px;
 } 
-
-.search_div{
-    
-    height: 45px;
-    background-color: rgb(221, 219, 219);
-    float: right;
-    border-radius: 5px;
-    display: flex;
-}
-.search{
-    width: 80%;
-    height: 45px;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    float: right;
-    padding: 10px;
-    padding-left: 0;
-    padding-right: 0;
-    background-color: rgb(221, 219, 219);
-}
 .rightheader{
     width: 30%;
 }
@@ -71,7 +64,7 @@
     background-color:#f9f9f9;
     width: 40px;
     height: 40px;
-   float: right;
-   margin: 15px;
+    float: right;
+    margin: 15px;
     border: none;
 }

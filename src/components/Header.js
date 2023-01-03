@@ -1,6 +1,6 @@
-import PersonIcon from '../images/profile.png';
-import search from '../images/search.png';
-// import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+// import PersonIcon from '../images/profile.png';
+// import search from '../images/search.png';
+// // import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import React, { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import menu from '../images/menu-rounded.png'
@@ -10,8 +10,6 @@ import { BsSearch } from "react-icons/bs";
 import { CgProfile} from "react-icons/cg";
 import { AiOutlineShoppingCart} from "react-icons/ai";
 import { GiHamburgerMenu} from "react-icons/gi";
-
-
 
 const Header =()=>{
     const [show, setShow] = useState(false);
@@ -29,7 +27,7 @@ const Header =()=>{
                 <div><button className="shoppingbtn"><AiOutlineShoppingCart/></button></div>
                 <div className="search_div">
                     <BsSearch className="iconsearch"/>
-                <input  type="search" name="" className="search"  placeholder="search here..."></input>
+                <input  type="search" name="" className="searchinput"  placeholder="search here..."></input>
                 </div> 
                 </div>
             </div>
