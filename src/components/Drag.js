@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {useDropzone} from 'react-dropzone';
-import menu from '../images/menu-rounded.png';
+import plus from '../images/plus.png';
 
 const Drag=()=>{
     const thumbsContainer = {
@@ -63,18 +63,29 @@ const Drag=()=>{
         return () => files.forEach(file => URL.revokeObjectURL(file.preview));
       }, []);
       
-    
+      const clickHandler=(e)=>{
+        e.defaultprevent();
+      }
       return (
-        <section className="container">
+        <Fragment>
+        <section className="container" style={{backgroundColor:"red",height:"350px"}}>
         <div {...getRootProps({className: 'dropzone'})}>
           <input {...getInputProps()} />
           {/* <p>Drag 'n' drop some files here, or click to select files</p> */}
-          <img src={menu} alt="logo"></img>
+          <p style={{width:"300px"}}>add image for adding product</p>
+          {/* <img src={plus} style={{width:"100px"}} alt="logo"></img> */}
         </div>
+        
         <aside style={thumbsContainer}>
           {thumbs}
         </aside>
+        <div><label>enter code</label><input></input></div>
+        <div><label>enter price</label><input></input></div>
+        <div><button onChange={clickHandler}>add to products</button></div>
       </section>
+      
+      
+      </Fragment>
        
       
        
