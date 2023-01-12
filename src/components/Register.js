@@ -1,11 +1,24 @@
 import { useEffect, useState } from "react";
-import classes from "./Login.css"
+import classes from "./Register.css"
 
-const Login =()=>{
+const Register=()=>{
     const [enteredUsername,setEnteredUsername]=useState('');
     const [enteredUsernameTouched,setEnteredUsernameTouched]=useState(false);
     const enteredUsernameIsVaLID = enteredUsername.trim() !== '';
     const nameInputIsInvalid = !enteredUsernameIsVaLID && enteredUsernameTouched;
+
+
+    const [enteredEmail,setEnteredEmail]=useState('');
+    const [enteredEmailTouched,setEnteredEmailTouched]=useState(false);
+    const enteredEmailIsVaLID = enteredEmail.includes('@');
+    const enteredEmailIsInvaLID = !enteredEmailIsVaLID && enteredEmailTouched;
+
+
+    const [enteredNumber,setEnteredNumber]=useState('');
+    const [enteredNumberTouched,setEnteredNumberTouched]=useState(false);
+    const enteredNumberIsVaLID = enteredNumber.trim().length === 12 ;
+    const enteredNumberIsInvalid = !enteredNumberIsVaLID && enteredNumberTouched;
+
 
     const [enteredPassword,setEnteredPassword]=useState('');
     const [enteredPasswordTouched,setEnteredPasswordTouched]=useState(false);
@@ -15,7 +28,7 @@ const Login =()=>{
     let formIsValid = false;
 
     //bejaye useeffect hamino bzarim kafiye
-    if(enteredUsernameIsVaLID,enteredPasswordIsVaLID){
+    if(enteredUsernameIsVaLID,enteredEmailIsVaLID,enteredNumberIsVaLID,enteredPasswordIsVaLID){
         formIsValid = true;
     }
     // if(enteredUsernameIsVaLID,enteredEmailIsVaLID,....){
@@ -36,15 +49,28 @@ const Login =()=>{
         if(!enteredUsernameIsVaLID){
             return;
         }
-
-        console.log(enteredUsername,enteredPassword);
+        // if(+enteredNumber<1){
+        //     return;
+        // }
+        console.log(enteredUsername,enteredEmail,enteredNumber,enteredPassword);
         setEnteredUsername('');
         setEnteredUsernameTouched(false);
+        setEnteredEmail('');
+        setEnteredEmailTouched(false);
+//bra baghie input ha moonde
+        setEnteredNumber('');
+        setEnteredNumberTouched(false);
         setEnteredPassword('');
         setEnteredPasswordTouched(false)
     }
     const usernameonblurHandler=(event)=>{
         setEnteredUsernameTouched(true);
+    }
+    const emailblurHandler=(event)=>{
+        setEnteredEmailTouched(true);
+    }
+    const numberblurHandler=(event)=>{
+        setEnteredNumberTouched(true);
     }
     const passwordblurHandler=(event)=>{
         setEnteredPasswordTouched(true);
@@ -52,20 +78,34 @@ const Login =()=>{
     const usernameChangeHandler=(event)=>{
         setEnteredUsername(event.target.value);
     }
+    const emailChangeHandler=(event)=>{
+        setEnteredEmail(event.target.value);
+    }
+    const numberChangeHandler=(event)=>{
+        setEnteredNumber(event.target.value);
+    }
     const passwordChangeHandler=(event)=>{
         setEnteredPassword(event.target.value);
     }
 
     return(
         <div className="file-upload">
-        <h2 style={{textAlign:"center"}}>ورود</h2>
+        <h2 style={{textAlign:"center"}}>ثبت نام</h2>
         <form onSubmit={submitHandler}>
             <div className="custom-form-group" >
             <input id="username" className="forminput" placeholder="یوزر نیم" type='text' value={enteredUsername} onBlur={usernameonblurHandler} onChange={usernameChangeHandler}></input>
             {nameInputIsInvalid && <p style={{color:"red"}}>username must not be empty</p>}
             </div>
             <div className="custom-form-group">
-            <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>    
+            <input id="email" className="forminput"  placeholder="ایمیل" type='email' value={enteredEmail} onBlur={emailblurHandler} onChange={emailChangeHandler}></input>
+            {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
+            </div>
+            <div className="custom-form-group">
+            <input id="number" className="forminput"  placeholder="شماره موبایل" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>       {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
+            {enteredNumberIsInvalid && <p style={{color:"red"}}>phone number must be 12 char</p>}
+            </div>
+            <div className="custom-form-group">
+            <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>       {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
             {enteredPasswordIsInVaLID && <p style={{color:"red"}}>password should be at least 8 char</p>}
             </div>
             <button type="submit" className="btn-submit">Submit</button>
@@ -74,25 +114,4 @@ const Login =()=>{
 
     )
 }
-export default Login;
-
-        // <div className="logindiv">
-        //     <p>ورود</p>
-        //     <div className="formdiv">
-        // <form onSubmit={submitHandler}>
-        //     {/* <label htmlFor="username">username</label> */}
-        //     <input id="username" className="forminput" placeholder="یوزر نیم" type='text' value={enteredUsername} onBlur={usernameonblurHandler} onChange={usernameChangeHandler}></input>
-        //     {nameInputIsInvalid && <p style={{color:"red"}}>username must not be empty</p>}
-        //     {/* <label htmlFor="email">email</label> */}
-        //     <input id="email" className="forminput"  placeholder="ایمیل" type='email' value={enteredEmail} onBlur={emailblurHandler} onChange={emailChangeHandler}></input>
-        //     {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
-        //     {/* <label htmlFor="phonenumber">phonenumber</label> */}
-        //     <input id="number" className="forminput"  placeholder="شماره موبایل" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>
-        //     {enteredNumberIsInvalid && <p style={{color:"red"}}>phone number must be 12 char</p>}
-        //     {/* <label htmlFor="password">password</label> */}
-        //     <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>
-        //     {enteredPasswordIsInVaLID && <p style={{color:"red"}}>password should be at least 8 char</p>}
-        //     <button type='submit' className="submitbtn" disabled={!formIsValid}>submit</button>
-        // </form>
-        // </div>
-        // </div>
+export default Register;
