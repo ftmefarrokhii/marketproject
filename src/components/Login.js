@@ -25,11 +25,6 @@ const Login =()=>{
     const enteredPasswordIsVaLID = enteredPassword.trim().length >= 8;
     const enteredPasswordIsInVaLID = !enteredPasswordIsVaLID && enteredPasswordTouched;
 
-    
-    
-    
-    
-
     let formIsValid = false;
 
     //bejaye useeffect hamino bzarim kafiye
@@ -94,26 +89,50 @@ const Login =()=>{
     }
 
     return(
-        <div className="logindiv">
-            <p>ورود</p>
-            <div className="formdiv">
+        <div className="file-upload">
+        <h2 style={{textAlign:"center"}}>ورود</h2>
         <form onSubmit={submitHandler}>
-            {/* <label htmlFor="username">username</label> */}
+            <div className="custom-form-group" >
             <input id="username" className="forminput" placeholder="یوزر نیم" type='text' value={enteredUsername} onBlur={usernameonblurHandler} onChange={usernameChangeHandler}></input>
             {nameInputIsInvalid && <p style={{color:"red"}}>username must not be empty</p>}
-            {/* <label htmlFor="email">email</label> */}
+            </div>
+            <div className="custom-form-group">
             <input id="email" className="forminput"  placeholder="ایمیل" type='email' value={enteredEmail} onBlur={emailblurHandler} onChange={emailChangeHandler}></input>
             {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
-            {/* <label htmlFor="phonenumber">phonenumber</label> */}
-            <input id="number" className="forminput"  placeholder="شماره موبایل" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>
+            </div>
+            <div className="custom-form-group">
+            <input id="number" className="forminput"  placeholder="شماره موبایل" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>       {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
             {enteredNumberIsInvalid && <p style={{color:"red"}}>phone number must be 12 char</p>}
-            {/* <label htmlFor="password">password</label> */}
-            <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>
+            </div>
+            <div className="custom-form-group">
+            <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>       {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
             {enteredPasswordIsInVaLID && <p style={{color:"red"}}>password should be at least 8 char</p>}
-            <button type='submit' className="submitbtn" disabled={!formIsValid}>submit</button>
+            </div>
+            <button type="submit" className="btn-submit">Submit</button>
         </form>
         </div>
-        </div>
+
     )
 }
 export default Login;
+
+        // <div className="logindiv">
+        //     <p>ورود</p>
+        //     <div className="formdiv">
+        // <form onSubmit={submitHandler}>
+        //     {/* <label htmlFor="username">username</label> */}
+        //     <input id="username" className="forminput" placeholder="یوزر نیم" type='text' value={enteredUsername} onBlur={usernameonblurHandler} onChange={usernameChangeHandler}></input>
+        //     {nameInputIsInvalid && <p style={{color:"red"}}>username must not be empty</p>}
+        //     {/* <label htmlFor="email">email</label> */}
+        //     <input id="email" className="forminput"  placeholder="ایمیل" type='email' value={enteredEmail} onBlur={emailblurHandler} onChange={emailChangeHandler}></input>
+        //     {enteredEmailIsInvaLID && <p style={{color:"red"}}>email must contain @</p>}
+        //     {/* <label htmlFor="phonenumber">phonenumber</label> */}
+        //     <input id="number" className="forminput"  placeholder="شماره موبایل" type='number' value={enteredNumber} onBlur={numberblurHandler} onChange={numberChangeHandler}></input>
+        //     {enteredNumberIsInvalid && <p style={{color:"red"}}>phone number must be 12 char</p>}
+        //     {/* <label htmlFor="password">password</label> */}
+        //     <input id="password" className="forminput"  placeholder="کلمه عبور" type='password' value={enteredPassword} onBlur={passwordblurHandler} onChange={passwordChangeHandler}></input>
+        //     {enteredPasswordIsInVaLID && <p style={{color:"red"}}>password should be at least 8 char</p>}
+        //     <button type='submit' className="submitbtn" disabled={!formIsValid}>submit</button>
+        // </form>
+        // </div>
+        // </div>

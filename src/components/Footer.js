@@ -70,14 +70,14 @@ const Footer =()=>{
         
     }
     return(
-        <div className="file-upload">
-        <h2>Image Drag & Drop & Preview</h2>
+    <div className="file-upload">
+        <h2 style={{textAlign:"center"}}>اطلاعات کالا را وارد کنید</h2>
         <form className="" encType= "multipart /form-data">
             <div className="custom-form-group" >
-                <input type="text" name="title" placeholder="Title" value={title} onChange={handlechange}/>
+                <input className="forminput" type="text" name="title" placeholder="کد کالا" value={title} onChange={handlechange}/>
             </div>
             <div className="custom-form-group">
-                <input type="text" name="desc" placeholder="Description" value={desc} onChange={handlechange}/>
+                <input className="forminput" type="text" name="desc" placeholder="قیمت" value={desc} onChange={handlechange}/>
             </div>
             <div className="custom-form-group">
                 <div className={highlight ? "custom-file-drop-area highlight" : "custom-file-drop-area"} onDragEnter={handlehighlight} onDragOver={handlehighlight} 
